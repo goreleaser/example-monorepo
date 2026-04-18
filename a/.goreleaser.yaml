@@ -4,6 +4,8 @@
 #
 # This is an example-real .goreleaser.yml file with some sensible defaults.
 # Make sure to check the documentation at https://goreleaser.com
+version: 2
+
 project_name: test_a
 before:
   hooks:
