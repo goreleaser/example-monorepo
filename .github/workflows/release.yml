@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
-          go-version: 1.19
+          go-version: "1.26"
       - if: startsWith(github.ref, 'refs/tags/a/v')
         shell: bash
         run: echo "flags=-f ./a/.goreleaser.yaml" >> $GITHUB_ENV
@@ -34,5 +34,5 @@ jobs:
           args: release --clean ${{ env.flags }}
 
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
